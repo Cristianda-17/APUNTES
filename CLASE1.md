@@ -3,7 +3,7 @@
 
 ---
 
-<h1 id="div-aligncenterseñales-digitales-y-análogasdiv"><div align="center">Señales Digitales y Análogas</div></h1>
+<h1 id="div-aligncentermicroprocesadordiv"><div align="center">Microprocesador</div></h1>
 <p><em>Cristian David Sotelo Nieto (134770)</em><br>
 <em>Juan Contreras (134126)</em><br>
 <em>Universidad Ecci</em><br>
@@ -11,36 +11,50 @@
 <em>Jorge Eduardo Cote</em><br>
 <em>09/03/2025</em></p>
 <hr>
-<h2 id="señales-digitales-y-análogas">Señales Digitales y Análogas</h2>
-<p>Las señales analógicas se componen de un rango continuo de valores, donde cada punto puede tener un valor ligeramente diferente. Las señales digitales se componen de una serie de dígitos que son 0 o 1.</p>
-<h3 id="puertos-de-entrada-y-salida">Puertos de entrada y salida</h3>
+<h2 id="microprocesador">Microprocesador</h2>
+<p>Es una máquina de estado de propósito general, compuesta por varias compuertas lógicas. Al momento de diseñar máquinas de estado, estas cumplen con ciertas funciones específicas.</p>
+<h3 id="evolución-histórica">Evolución Histórica</h3>
 <ul>
-<li><em>Interfaz de comunicación</em>: Medio por el cual el microcontrolador recibe y envía información.</li>
-<li><em>Bidireccionalidad</em>: Permite tanto la entrada como la salida de datos.</li>
-<li><em>Monitoreo y control</em>: Facilita la gestión de hardware externo.</li>
-<li><em>Puertos físicos</em>: Conducen señales eléctricas para la transmisión de datos.</li>
-<li><em>Tipos de puertos</em>: Pueden ser digitales o análogos, según el tipo de señal manejada.</li>
+<li>*1971: Creación del primer microprocesador (*Intel 4004).</li>
+<li><em>1972</em>: Microprocesador 8008.</li>
+<li><em>1973</em>: Microprocesador 8080, capaz de realizar hasta 500,000 operaciones por segundo.</li>
+<li><em>1975</em>: Motorola lanza un microprocesador de bajo costo.</li>
+<li><em>1976</em>: Surgen las primeras microcomputadoras de un solo chip.</li>
+<li><em>198X</em>: Se presenta una división entre el uso de los microcontroladores y los microprocesadores.</li>
 </ul>
-<h3 id="puertos-digitales">Puertos digitales</h3>
-<p>Los puertos digitales en un microcontrolador suelen agruparse en bloques de 8 pines, aunque no es una regla fija. Pueden configurarse como entradas, salidas o ser bidireccionales. Los microcontroladores comerciales poseen entre 8 y 32 pines de I/O digitales, aunque algunos, como el Motorola HCS12, pueden superar los 90 pines. Un microcontrolador generalmente cuenta con varios puertos, cuyos pines también pueden ser utilizados por otros módulos internos. La mayoría operan con lógica directa, salvo que el fabricante indique lo contrario.</p>
-<h3 id="componentes-típicos">Componentes típicos</h3>
+<h3 id="componentes">Componentes</h3>
 <ul>
-<li><em>Data Direction Register (DDR)</em>: Registro que almacena la configuración del puerto, definiendo si se usará como entrada o salida.</li>
-<li><em>Port Register (PORT)</em>: Registro que almacena el equivalente lógico de los niveles de tensión en los pines de conexión eléctrica.</li>
-<li><em>Port Input Register (PIN)</em>: Generalmente es solo de lectura y contiene el estado actual de todos los pines.</li>
+<li><em>ALU</em>: Unidad Aritmética Lógica.</li>
+<li><em>UC</em>: Unidad de control.</li>
+<li><em>Matriz de registro</em>: Registros de memoria, cumplen con la función de almacenar el código de la operación.</li>
 </ul>
-<h3 id="entradas-digitales">Entradas digitales</h3>
-<p>Los puertos digitales interpretan niveles de tensión del hardware externo, donde un “1” lógico representa un nivel alto (high) y un “0” lógico un nivel bajo (low). Los rangos de tensión varían según el microcontrolador.</p>
-<h3 id="configuración-io">Configuración I/O</h3>
+<h3 id="set-de-instrucciones">Set de instrucciones</h3>
 <ul>
-<li>Lo primero es configurar el registro TRIS para definir si el pin será de entrada o salida. En el PIC 18F4550, el datasheet indica:
+<li>*CISC (*Complex Instruction Set Computer): La unidad de control descompone las instrucciones en microinstrucciones que permiten ejecutar operaciones mucho más complejas.</li>
+<li>*RISC (*Reduced Instruction Set Computer): La unidad de control habilita directamente los pines necesarios para llevar a cabo una instrucción.</li>
+</ul>
+<h3 id="tipos-de-arquitecturas">Tipos de arquitecturas</h3>
 <ul>
-<li>Si el registro TRIS es “1”, está configurado como entrada.</li>
-<li>Si el registro TRIS es “0”, está configurado como salida.</li>
+<li><em>Von Neumann</em>: Tanto la memoria de programa como la memoria de datos comparten almacenamiento, por lo que usan el mismo bus.</li>
+<li><em>Harvard</em>: El programa y los datos están en diferentes espacios de memoria, lo cual hace más eficiente el rendimiento, pero exige el uso de dos buses y chips de memoria.</li>
 </ul>
-</li>
-<li>Cargar o leer los datos por medio de los registros LAT o PORT.</li>
+<h3 id="características-de-un-microprocesador">Características de un microprocesador</h3>
+<ul>
+<li><em>Reloj</em>: Frecuencia en la que se realiza un trabajo.</li>
+<li><em>Tamaño de bus de datos e instrucciones</em>: Número de bits del procesador.</li>
+<li><em>Set de instrucciones</em>.</li>
+<li><em>Entrada y salida</em>.</li>
+<li><em>Memoria del programa</em>.</li>
 </ul>
-<h3 id="salidas-digitales">Salidas digitales</h3>
-<p>Las salidas digitales de un microcontrolador manejan niveles de tensión y corriente según su familia. Por ejemplo, en el ATmega16, el estado low tiene un máximo de 0.7 V, mientras que el estado high tiene un mínimo de 4.2 V, y la corriente de salida suele estar en el rango de 4-20 mA. Dado que los microcontroladores no cuentan con protecciones internas en los pines de salida, es fundamental implementar estrategias de protección para evitar cortocircuitos. Configurar correctamente el registro DDR como salida conecta el pin al registro PORT, y conocer los valores por defecto de los pines ayuda a tomar acciones en caso de reinicio.</p>
+<h2 id="microcontrolador">Microcontrolador</h2>
+<p>Es un dispositivo programable con capacidad de ejecutar operaciones, tareas y procesos a gran velocidad, lo que permite su uso en aplicaciones en tiempo real, como sensores, sistemas remotos, etc.</p>
+<h3 id="aplicaciones">Aplicaciones</h3>
+<ul>
+<li><em>Robótica</em>: Muy usados en subsistemas específicos de control (extremidades, facciones del rostro, soportes prensiles, etc.).</li>
+<li><em>Equipamiento informático</em>: Impresoras, escáneres, copiadoras, etc.</li>
+<li><em>Sistemas portátiles y autónomos</em>.</li>
+<li><em>Sector automotriz</em>: Control centralizado de puertas y ventanas, climatizadores, inyección, alarmas, etc.</li>
+<li><em>Sector doméstico</em>: Integrado en los sistemas de televisores, lavarropas, microondas, heladeras, videos, etc.</li>
+<li><em>Sector industrial</em>: Controladores industriales y automatización.</li>
+</ul>
 
